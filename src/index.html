@@ -10,7 +10,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-  <app-root></app-root>
+<body onload="ajustarTamanho()">
+  <div id="container">
+    <app-root id="app"></app-root>
+  </div>
+  
+  <script>
+    function ajustarTamanho() {
+      app = document.getElementById('app');
+      h = app.clientHeight + 50;
+      w = app.clientWidth + 50;
+      container = document.getElementById('container');
+      container.style.minHeight = h + 'px';
+      container.style.minWidth = w + 'px';
+    }
+  </script>
+
 </body>
 </html>

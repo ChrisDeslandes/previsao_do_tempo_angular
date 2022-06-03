@@ -1,4 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100vh; background-color: #f5f5f5; }
+body { margin: 0; font-family: "Roboto", "Helvetica Neue", "sans-serif"; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#container {
+    margin: auto auto;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+app-root {
+    text-align: center;
+    background-color: white;
+    padding: 100px 60px 60px 60px;
+    border: 2px solid rgba(0,0,0,.4);
+}
