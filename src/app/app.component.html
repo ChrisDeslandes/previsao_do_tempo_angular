@@ -1,22 +1,37 @@
 <mat-icon id="icon" aria-hidden="false">light_mode</mat-icon>
 <h1>PREVISÃO DO TEMPO</h1>
 
-<mat-form-field appearance="fill" floatLabel="always">
-  <mat-label>Valor a ser convertido:</mat-label>
-  <input matInput type="number" min="0" step="0.01">
-  <span matPrefix>R$</span>
+<mat-form-field appearance="fill">
+  <mat-label>Escolha uma capital</mat-label>
+  <mat-select [(ngModel)]="estadoSelecionado" (valueChange)="mostrarErro = false">
+    <mat-option value="455904">Rio Branco/AC</mat-option>
+    <mat-option value="455880">Maceió/AL</mat-option>
+    <mat-option value="455970">Macapá/AP</mat-option>
+    <mat-option value="455833">Manaus/AM</mat-option>
+    <mat-option value="455826">Salvador/BA</mat-option>
+    <mat-option value="455830">Fortaleza/CE</mat-option>
+    <mat-option value="455819">Brasília/DF</mat-option>
+    <mat-option value="455922">Vitória/ES</mat-option>
+    <mat-option value="455831">Goiânia/GO</mat-option>
+    <mat-option value="455834">São Luís/MA</mat-option>
+    <!-- <mat-option value="">Cuiabá/MT</mat-option>
+    <mat-option value="">Campo Grande/MS</mat-option> -->
+    <mat-option value="455821">Belo Horizonte/MG</mat-option>
+    <mat-option value="455820">Belém/PA</mat-option>
+    <!-- <mat-option value="">João Pessoa/PB</mat-option> -->
+    <mat-option value="455822">Curitiba/PR</mat-option>
+    <mat-option value="455824">Recife/PE</mat-option>
+    <!-- <mat-option value="">Teresina/PI</mat-option> -->
+    <mat-option value="455825">Rio de Janeiro/RJ</mat-option>
+    <!-- <mat-option value="">Natal/RN</mat-option> -->
+    <mat-option value="455823">Porto Alegre/RS</mat-option>
+    <!-- <mat-option value="">Porto Velho/RO</mat-option> -->
+    <mat-option value="455936">Boa Vista/RR</mat-option>
+    <!-- <mat-option value="">Florianópolis/SC</mat-option> -->
+    <mat-option value="455827">São Paulo/SP</mat-option>
+    <!-- <mat-option value="">Aracaju/SE</mat-option>
+    <mat-option value="">Palmas/TO</mat-option> -->
+  </mat-select>
 </mat-form-field>
-
-<div id="resultados">
-  <h2><u>Resultados</u></h2>
-
-  <mat-form-field floatLabel="never">
-    <input matInput id="dolares" readonly type="text">
-    <span matPrefix>US$</span>
-  </mat-form-field>
-
-  <mat-form-field floatLabel="always">
-    <input matInput id="euros" readonly type="text">
-    <span matPrefix id="simboloEuro">€</span>
-  </mat-form-field>
-</div>
+<span id="erro" *ngIf='mostrarErro'>Por favor, selecione um estado...</span>
+<button mat-raised-button color="primary" (click)="openDialog()">VER PREVISÃO</button>

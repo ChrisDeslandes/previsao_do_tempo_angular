@@ -4,14 +4,24 @@ mat-form-field {
     display: block;
 }
 
-h1, h2 {
+mat-select {
+    margin-top: 5px;
+}
+
+button {
+    width: 220px;
+    height: 50px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    display: block;
+    margin: 20px auto;
+}
+
+h1 {
     color: #666;
     margin-top: 15px;
     margin-bottom: 10px;
     letter-spacing: 2px;
-}
-
-h1 {
     margin-bottom: 40px;
 }
 
@@ -21,17 +31,6 @@ h1 {
     margin-bottom: 40px;
 }
 
-input {
-    margin-top: 10px;
-    text-align: center;
-}
-
-#resultados {
-    margin-top: 20px;
-    padding: 10px 30px;
-    border: 1px solid #666;
-}
-
-#simboloEuro {
-    font-size: 1.1rem;
+#erro {
+    color: red;
 }
