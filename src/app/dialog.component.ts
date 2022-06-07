@@ -8,6 +8,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
     styleUrls: ['./dialog.component.css']
   })
   export class DialogComponent {
+    public cidade: string = '';
     public temperatura: string = '';
     public dataHora: string = '';
     public descricao: string = '';
@@ -25,9 +26,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
     }
 
     private getDados() {
-      const url = 'https://api.hgbrasil.com/weather?format=json-cors&key=e33a1dfe&woeid=' + this.data.codWOEID;
+      const url = 'https://api.hgbrasil.com/weather?format=json-cors&key=89c337ab&woeid=' + this.data.codWOEID;
       this.http.get<any>(url).subscribe(data => {
-        if (data.status === 200) {
+        if (data) {
+          this.cidade = data.results.city;
           this.temperatura = data.results.temp;
           this.dataHora = data.results.date + ' ' + data.results.time;
           this.descricao = data.results.description;
@@ -36,32 +38,45 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
           this.velocidadeVento = data.results.wind_speedy;
           this.nascerSol = data.results.sunrise;
           this.porSol = data.results.sunset;
-          if (data.results.condition_slug === 'storm') {
-            this.condicao = 'tempestade';
-          } else if (data.results.condition_slug === 'snow') {
-            this.condicao = 'neve';
-          } else if (data.results.condition_slug === 'hail') {
-            this.condicao = 'granizo';
-          } else if (data.results.condition_slug === 'rain') {
-            this.condicao = 'chuva';
-          } else if (data.results.condition_slug === 'fog') {
-            this.condicao = 'neblina';
-          } else if (data.results.condition_slug === 'clear_day') {
-            this.condicao = 'dia limpo';
-          } else if (data.results.condition_slug === 'clear_night') {
-            this.condicao = 'noite limpa';
-          } else if (data.results.condition_slug === 'cloud') {
-            this.condicao = 'nublado';
-          } else if (data.results.condition_slug === 'cloudly_day') {
-            this.condicao = 'nublado de dia';
-          } else if (data.results.condition_slug === 'cloudly_night') {
-            this.condicao = 'nublado de noite';
-          } else if (data.results.condition_slug === 'none_day') {
-            this.condicao = 'erro ao obter, mas está de dia';
-          } else if (data.results.condition_slug === 'none_night') {
-            this.condicao = 'erro ao obter, mas está de noite';
-          } else {            
-            this.condicao = data.results.condition_slug;
+          switch (data.results.condition_slug) {
+            case 'storm':
+              this.condicao = 'tempestade';
+              break;
+            case 'snow':
+              this.condicao = 'neve';
+              break;
+            case 'hail':
+              this.condicao = 'granizo';
+              break;
+            case 'rain':
+              this.condicao = 'chuva';
+              break;
+            case 'fog':
+              this.condicao = 'neblina';
+              break;
+            case 'clear_day':
+              this.condicao = 'dia limpo';
+              break;
+            case 'clear_night':
+              this.condicao = 'noite limpa';
+              break;
+            case 'cloud':
+              this.condicao = 'nublado';
+              break;
+            case 'cloudly_day':
+              this.condicao = 'nublado de dia';
+              break;
+            case 'cloudly_night':
+              this.condicao = 'nublado de noite';
+              break;
+            case 'none_day':
+              this.condicao = 'erro ao obter, mas está de dia';
+              break;
+            case 'none_night':
+              this.condicao = 'erro ao obter, mas está de noite';
+              break;
+            default:
+              this.condicao = data.results.condition_slug;
           }
           this.mediaTempMax = this.calculaMedia(
             data.results.forecast[0].max,

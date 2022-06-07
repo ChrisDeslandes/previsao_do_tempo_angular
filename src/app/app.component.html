@@ -4,34 +4,34 @@
 <mat-form-field appearance="fill">
   <mat-label>Escolha uma capital</mat-label>
   <mat-select [(ngModel)]="estadoSelecionado" (valueChange)="mostrarErro = false">
-    <mat-option value="455904">Rio Branco/AC</mat-option>
-    <mat-option value="455880">Maceió/AL</mat-option>
-    <mat-option value="455970">Macapá/AP</mat-option>
-    <mat-option value="455833">Manaus/AM</mat-option>
-    <mat-option value="455826">Salvador/BA</mat-option>
-    <mat-option value="455830">Fortaleza/CE</mat-option>
-    <mat-option value="455819">Brasília/DF</mat-option>
-    <mat-option value="455922">Vitória/ES</mat-option>
-    <mat-option value="455831">Goiânia/GO</mat-option>
-    <mat-option value="455834">São Luís/MA</mat-option>
-    <!-- <mat-option value="">Cuiabá/MT</mat-option>
-    <mat-option value="">Campo Grande/MS</mat-option> -->
-    <mat-option value="455821">Belo Horizonte/MG</mat-option>
+    <mat-option value="455839">Aracaju/SE</mat-option>
     <mat-option value="455820">Belém/PA</mat-option>
-    <!-- <mat-option value="">João Pessoa/PB</mat-option> -->
-    <mat-option value="455822">Curitiba/PR</mat-option>
-    <mat-option value="455824">Recife/PE</mat-option>
-    <!-- <mat-option value="">Teresina/PI</mat-option> -->
-    <mat-option value="455825">Rio de Janeiro/RJ</mat-option>
-    <!-- <mat-option value="">Natal/RN</mat-option> -->
-    <mat-option value="455823">Porto Alegre/RS</mat-option>
-    <!-- <mat-option value="">Porto Velho/RO</mat-option> -->
+    <mat-option value="455821">Belo Horizonte/MG</mat-option>
     <mat-option value="455936">Boa Vista/RR</mat-option>
-    <!-- <mat-option value="">Florianópolis/SC</mat-option> -->
+    <mat-option value="455819">Brasília/DF</mat-option>
+    <mat-option value="26804347">Campo Grande/MS</mat-option>
+    <mat-option value="455829">Cuiabá/MT</mat-option>
+    <mat-option value="455822">Curitiba/PR</mat-option>
+    <mat-option value="90200648">Florianópolis/SC</mat-option>
+    <mat-option value="455830">Fortaleza/CE</mat-option>
+    <mat-option value="455831">Goiânia/GO</mat-option>
+    <mat-option value="455872">João Pessoa/PB</mat-option>
+    <mat-option value="455970">Macapá/AP</mat-option>
+    <mat-option value="455880">Maceió/AL</mat-option>
+    <mat-option value="455833">Manaus/AM</mat-option>
+    <mat-option value="455888">Natal/RN</mat-option>
+    <mat-option value="457721">Palmas/TO</mat-option>
+    <mat-option value="455823">Porto Alegre/RS</mat-option>
+    <mat-option value="455901">Porto Velho/RO</mat-option>
+    <mat-option value="455824">Recife/PE</mat-option>
+    <mat-option value="455904">Rio Branco/AC</mat-option>
+    <mat-option value="455825">Rio de Janeiro/RJ</mat-option>
+    <mat-option value="455826">Salvador/BA</mat-option>
+    <mat-option value="455834">São Luís/MA</mat-option>
     <mat-option value="455827">São Paulo/SP</mat-option>
-    <!-- <mat-option value="">Aracaju/SE</mat-option>
-    <mat-option value="">Palmas/TO</mat-option> -->
+    <mat-option value="455835">Teresina/PI</mat-option>
+    <mat-option value="455922">Vitória/ES</mat-option>
   </mat-select>
 </mat-form-field>
-<span id="erro" *ngIf='mostrarErro'>Por favor, selecione um estado...</span>
+<span id="erro" *ngIf='mostrarErro'>Por favor, selecione uma capital...</span>
 <button mat-raised-button color="primary" (click)="openDialog()">VER PREVISÃO</button>

@@ -18,8 +18,8 @@ export class AppComponent {
     if (this.estadoSelecionado) {
       let dialogRef = this.dialog.open(DialogComponent,
         {
-          width: '800px',
-          height: '700px',
+          width: '50%',
+          height: '80%',
           data:
             {
               codWOEID: this.estadoSelecionado
