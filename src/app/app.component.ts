@@ -19,7 +19,6 @@ export class AppComponent {
       let dialogRef = this.dialog.open(DialogComponent,
         {
           width: '50%',
-          height: '80%',
           data:
             {
               codWOEID: this.estadoSelecionado
